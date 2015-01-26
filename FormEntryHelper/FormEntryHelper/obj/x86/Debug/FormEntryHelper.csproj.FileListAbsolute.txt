@@ -8,3 +8,13 @@ E:\Workplace\Projects\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry
 E:\Workplace\Projects\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.exe
 E:\Workplace\Projects\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.pdb
 E:\Workplace\Projects\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.PictureBox.resources
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\bin\Debug\FormEntryHelper.exe.config
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.exe
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.pdb
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\bin\Debug\FormEntryHelper.exe
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\bin\Debug\FormEntryHelper.pdb
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.csprojResolveAssemblyReference.cache
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.DataEntryHelperUiForm.resources
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.PictureBox.resources
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.Properties.Resources.resources
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\x86\Debug\FormEntryHelper.csproj.GenerateResource.Cache

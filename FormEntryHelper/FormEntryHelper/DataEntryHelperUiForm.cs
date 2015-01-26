@@ -15,7 +15,9 @@ namespace FormEntryHelper
         private List<string> _files;
         private const double ZoomScale = 2;
         private const int InfoDelay = 1000;
+        private const string OutputFolder = "Output";
         private readonly Timer _infoTimer;
+        private string _selectedFolderPath = "";
 
         public DataEntryHelperUiForm()
         {
@@ -30,11 +32,11 @@ namespace FormEntryHelper
             var result = folderBrowser.ShowDialog();
             if(result != DialogResult.OK) { return; }
 
-            
+            _selectedFolderPath = folderBrowser.SelectedPath;
             _files = new List<string>();
             foreach (string filter in FileFilters)
             {
-                _files.AddRange(Directory.GetFiles(folderBrowser.SelectedPath, filter));
+                _files.AddRange(Directory.GetFiles(_selectedFolderPath, filter));
             }
             _files.Sort();
             _fileIndex = 0;
@@ -44,6 +46,10 @@ namespace FormEntryHelper
             {
                 ViewFormImage(_files[_fileIndex]);
                 ShowSuccessMessage("Folder Selected");
+                if (!Directory.Exists(Path.Combine(_selectedFolderPath, OutputFolder)))
+                {
+                    Directory.CreateDirectory(Path.Combine(_selectedFolderPath, OutputFolder));
+                }
             }
             else
             {
@@ -71,10 +77,12 @@ namespace FormEntryHelper
                 return;
             }
 
+            File.Move(_files[_fileIndex], Path.Combine(_selectedFolderPath, OutputFolder) + @"\" + mobileNoTextBox.Text + Path.GetExtension(_files[_fileIndex]));
             if (_files.Count > (_fileIndex + 2))
             {
                 _fileIndex += 2;
                 ViewFormImage(_files[_fileIndex]);
+                mobileNoTextBox.Text = "";
             }
         }
 

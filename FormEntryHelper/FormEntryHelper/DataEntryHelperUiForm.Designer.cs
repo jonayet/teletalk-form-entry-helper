@@ -61,9 +61,9 @@
             // 
             // viewPanel
             // 
-            this.viewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.viewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.viewPanel.AutoScroll = true;
             this.viewPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.viewPanel.Controls.Add(this.formViewPictureBox);
@@ -125,7 +125,7 @@
             this.Controls.Add(this.saveAndNextButton);
             this.Controls.Add(this.selectFolderButton);
             this.Name = "DataEntryHelperUiForm";
-            this.Text = "DataEntryHelperUiForm";
+            this.Text = "Data Entry Helper";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.formViewPictureBox)).EndInit();
             this.viewPanel.ResumeLayout(false);
