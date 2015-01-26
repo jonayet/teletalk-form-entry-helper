@@ -12,7 +12,7 @@ namespace FormEntryHelper
     {
         private static readonly string[] FileFilters = { "*.jpg", "*.bmp" };
         private int _fileIndex;
-        private List<string> _files;
+        private Stack<string> _files;
         private const double ZoomScale = 2;
         private const int InfoDelay = 1000;
         private const string OutputFolder = "Output";
@@ -33,18 +33,19 @@ namespace FormEntryHelper
             if(result != DialogResult.OK) { return; }
 
             _selectedFolderPath = folderBrowser.SelectedPath;
-            _files = new List<string>();
+            var filePaths = new List<string>();
             foreach (string filter in FileFilters)
             {
-                _files.AddRange(Directory.GetFiles(_selectedFolderPath, filter));
+                filePaths.AddRange(Directory.GetFiles(_selectedFolderPath, filter));
             }
-            _files.Sort();
-            _fileIndex = 0;
+
+            filePaths.Sort();
+            foreach (var filePath in filePaths) { _files.Push(filePath); }
 
             // show first form
             if (_files.Count > 0)
             {
-                ViewFormImage(_files[_fileIndex]);
+                ViewFormImage(_files.Peek());
                 ShowSuccessMessage("Folder Selected");
                 if (!Directory.Exists(Path.Combine(_selectedFolderPath, OutputFolder)))
                 {
@@ -77,17 +78,20 @@ namespace FormEntryHelper
                 return;
             }
 
-            File.Move(_files[_fileIndex], Path.Combine(_selectedFolderPath, OutputFolder) + @"\" + mobileNoTextBox.Text + Path.GetExtension(_files[_fileIndex]));
+            string selectedFile = _files.Pop();
+
+            //mobileNoTextBox.Text + Path.GetExtension(_files[_fileIndex])
+            File.Move(selectedFile, Path.Combine(_selectedFolderPath, OutputFolder) + @"\" + Path.GetFileName(selectedFile));
             if (_files.Count > (_fileIndex + 2))
             {
-                _fileIndex += 2;
-                ViewFormImage(_files[_fileIndex]);
+                ViewFormImage(selectedFile);
                 mobileNoTextBox.Text = "";
             }
         }
 
         void ViewFormImage(string imagePath)
         {
+            Text = Path.GetFileNameWithoutExtension(imagePath);
             using (var originalImage = new Bitmap(imagePath))
             using (var scaledImage = new Bitmap((int) (originalImage.Width * ZoomScale), (int) (originalImage.Height * ZoomScale)))
             using (var gfx = Graphics.FromImage(scaledImage))
