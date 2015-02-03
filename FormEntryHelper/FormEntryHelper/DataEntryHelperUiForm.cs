@@ -17,7 +17,7 @@ namespace FormEntryHelper
         private const double ZoomScale = 2;
         private const int InfoDelay = 1000;
         private const string OutputFolder = "Output";
-        private const string IdSufix = "_ID";
+        private const string IdSufix = "_id";
         private readonly Timer _infoTimer;
         private string _selectedFolderPath = "";
         private string _selectedFormPath = "";
@@ -63,6 +63,8 @@ namespace FormEntryHelper
             {
                 ShowErrorMessage("Folder Not Selected");
             }
+
+            mobileNoMaskedTextBox.Text = mobileNoPrefixMaskedTextBox.Text;
         }
 
         void SelectNextFormAndId()
@@ -102,7 +104,7 @@ namespace FormEntryHelper
             if (!File.Exists(newIdPath)) { File.Move(_selectedIdPath, newIdPath); } else { ShowErrorMessage("Id exist"); }
 
             ShowSuccessMessage("Success");
-            mobileNoMaskedTextBox.Text = "015";
+            mobileNoMaskedTextBox.Text = mobileNoPrefixMaskedTextBox.Text;
             mobileNoMaskedTextBox.ScrollToCaret();
             mobileNoMaskedTextBox.Focus();
 
@@ -120,12 +122,17 @@ namespace FormEntryHelper
                 using (var gfx = Graphics.FromImage(scaledImage))
                 {
                     gfx.DrawImage(originalImage, 0, 0, scaledImage.Width, scaledImage.Height);
-                    var lastImage = formViewPictureBox.Image;
-                    formViewPictureBox.Image = (Bitmap) scaledImage.Clone();
+                    var lastImage = formView1PictureBox.Image;
+                    formView1PictureBox.Image = (Bitmap) scaledImage.Clone();
+                    formView2PictureBox.Image = formView1PictureBox.Image;
                     if (lastImage != null) { lastImage.Dispose(); }
-                    formViewPanel.VerticalScroll.Value = 0;
-                    formViewPanel.HorizontalScroll.Value = formViewPanel.HorizontalScroll.Maximum - 50;
-                    formViewPanel.Invalidate();
+
+                    formView1Panel.VerticalScroll.Value = 0;
+                    formView2Panel.VerticalScroll.Value = formView1PictureBox.Width - 150;
+                    formView1Panel.HorizontalScroll.Value = formView1PictureBox.Width - 50;
+                    formView2Panel.HorizontalScroll.Value = 0;
+                    formView1Panel.Invalidate();
+                    formView2Panel.Invalidate();
                 }
             }
             catch { }
@@ -141,7 +148,7 @@ namespace FormEntryHelper
                     idViewPictureBox.Image = (Bitmap) scaledImage.Clone();
                     if (lastImage != null) { lastImage.Dispose(); }
                     idViewPanel.VerticalScroll.Value = 0;
-                    idViewPanel.HorizontalScroll.Value = idViewPanel.HorizontalScroll.Maximum - 50;
+                    idViewPanel.HorizontalScroll.Value = idViewPictureBox.Width - 50;
                     idViewPanel.Invalidate();
                 }
             }

@@ -1,0 +1,6 @@
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\bin\Release\FormEntryHelper.exe.config
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\bin\Release\FormEntryHelper.exe
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\Release\FormEntryHelper.DataEntryHelperUiForm.resources
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\Release\FormEntryHelper.Properties.Resources.resources
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\Release\FormEntryHelper.csproj.GenerateResource.Cache
+F:\Projects\Personal\Software\Ujjal Vai\Teletalk Form Entry\teletalk-form-entry-helper\FormEntryHelper\FormEntryHelper\obj\Release\FormEntryHelper.exe
